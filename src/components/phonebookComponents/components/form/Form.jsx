@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from '../filter/FilterField.styled';
 import { Button, PhoneBook } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../../Redux/query';
+import { addContact, updateContact } from '../../../Redux/query';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -10,15 +10,29 @@ export const Form = () => {
 
   const submitForm = e => {
     e.preventDefault();
-    if (contacts.find(contact => contact.name === e.target.name.value)) {
+    const newContact = {
+      name: e.target.name.value,
+      number: e.target.number.value,
+    };
+    if (
+      contacts.find(
+        contact =>
+          contact.name === newContact.name &&
+          contact.number === newContact.number
+      )
+    ) {
       alert('You have this contact already');
       return e.currentTarget.reset();
     }
-    const contact = {
-      name: e.target.name.value,
-      phone: e.target.number.value,
-    };
-    dispatch(addContact(contact));
+    if (contacts.find(contact => contact.name === newContact.name)) {
+      newContact.id = contacts.find(
+        contact => contact.name === newContact.name
+      ).id;
+      dispatch(updateContact(newContact));
+      alert('You just changed this contact');
+      return e.currentTarget.reset();
+    }
+    dispatch(addContact(newContact));
     e.currentTarget.reset();
   };
 
@@ -41,7 +55,7 @@ export const Form = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <Button type="submit">Add contact</Button>
+        <Button type="submit">Add/update contact</Button>
       </PhoneBook>
     </>
   );

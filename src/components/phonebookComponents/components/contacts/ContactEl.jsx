@@ -15,7 +15,7 @@ export default function ContactEl({ contact }) {
         X
       </Delete>
       <Name>{contact.name}:</Name>
-      <Tel> {contact.phone}</Tel>
+      <Tel> {contact.number}</Tel>
     </Card>
   );
 }

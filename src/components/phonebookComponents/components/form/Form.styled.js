@@ -21,5 +21,6 @@ border: none;
 border-radius:5px;
 // margin-left: 20px;
 margin-top: 20px;
-width: 100px;
+width: 100%;
+padding: 5px;
 `;

@@ -18,3 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
+
+// {
+//   "name": "lkjhgfdsag",
+//   "email": " 
+// lkjhgfjghfdsa@mail.com
+// ",
+//   "password": "lkjhgfdsa123"
+// }
