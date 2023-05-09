@@ -1,8 +1,8 @@
 import React from 'react';
-import { Input } from '../filter/FilterField.styled';
-import { Button, PhoneBook } from './Form.styled';
+import { PhoneBook } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact, updateContact } from '../../../Redux/query';
+import { Button, TextField } from '@mui/material';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -39,22 +39,24 @@ export const Form = () => {
   return (
     <>
       <PhoneBook action="" onSubmit={submitForm}>
-        <label htmlFor="name">Name</label>
-        <Input
-          type="text"
+        <TextField
+          id="standard-basic-1"
           name="name"
+          label="Name"
+          variant="standard"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-        />
-        <label htmlFor="number">Number</label>
-        <Input
-          type="tel"
+        ></TextField>{' '}
+        <TextField
+          id="standard-basic-2"
           name="number"
+          label="Phone number"
+          variant="standard"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-        />
+        ></TextField>
         <Button type="submit">Add/update contact</Button>
       </PhoneBook>
     </>

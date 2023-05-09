@@ -7,7 +7,7 @@ import { Container, Header } from './PhoneBook.styled';
 export const Phonebook = () => {
   return (
     <Container>
-      <Header>PhoneBook</Header>
+      {/* <Header>PhoneBook</Header> */}
       <Form />
 
       <Header>Contacts</Header>

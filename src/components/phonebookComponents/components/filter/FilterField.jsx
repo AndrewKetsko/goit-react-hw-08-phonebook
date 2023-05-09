@@ -1,7 +1,7 @@
 import React from 'react';
-import { Input, Name } from './FilterField.styled';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { TextField } from '@mui/material';
 import { filterContacts } from '../../../Redux/slice';
 
 export const FilterField = () => {
@@ -11,14 +11,13 @@ export const FilterField = () => {
     dispatch(filterContacts(e.target.value.toLowerCase()));
 
   return (
-    <>
-      <Name htmlFor="search">Find contacts by name</Name>
-      <Input
-        type="text"
+      <TextField
+        id="standard-basic-1"
         name="filter"
+        label="Find contacts by name"
+        variant="standard"
         onInput={searchFunc}
         value={searchValue}
-      />
-    </>
+      ></TextField>
   );
 };

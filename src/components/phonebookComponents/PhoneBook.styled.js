@@ -5,11 +5,13 @@ export const Header = styled.h2`
 `;
 
 export const Container = styled.div`
-outline: 1px solid black;
-// display:flex;
-// justify-content:center;
-margin: 10px;
-padding: 10px;
-width: 100%;
-max-width: 400px;
+  outline: 1px solid black;
+  width: 300px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+//   align-items: center;
+  padding: 20px;
+  margin: 50px auto;
 `;
