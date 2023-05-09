@@ -1,5 +1,7 @@
 import { createUser } from "components/Redux/query";
 import { useDispatch } from "react-redux";
+import { Button, TextField } from '@mui/material';
+import { Form } from '../LoginForm/Login.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -15,14 +17,27 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={submitForm}>
-      <label htmlFor="email">Email</label>
-      <input name="email" type="text"></input>
-      <label htmlFor="name">Name</label>
-      <input name="name" type="text"></input>
-      <label htmlFor="password">Password</label>
-      <input name="password" type="password"></input>
-      <button type="submit">Submit</button>
-    </form>
+    <Form autoComplete="off" onSubmit={submitForm}>
+      <TextField
+        id="standard-basic-1"
+        name="email"
+        label="Email"
+        variant="standard"
+      ></TextField>
+      <TextField
+        id="standard-basic-2"
+        name="name"
+        label="Name"
+        variant="standard"
+      ></TextField>
+      <TextField
+        id="standard-basic-3"
+        name="password"
+        label="Password"
+        variant="standard"
+        type="password"
+      ></TextField>
+      <Button type="submit">Submit</Button>
+    </Form>
   );
 };
