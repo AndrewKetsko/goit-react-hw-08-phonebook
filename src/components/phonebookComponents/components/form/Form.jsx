@@ -24,9 +24,17 @@ export const Form = () => {
       alert('You have this contact already');
       return e.currentTarget.reset();
     }
-    if (contacts.find(contact => contact.name === newContact.name)) {
+    if (
+      contacts.find(
+        contact =>
+          contact.name === newContact.name ||
+          contact.number === newContact.number
+      )
+    ) {
       newContact.id = contacts.find(
-        contact => contact.name === newContact.name
+        contact =>
+          contact.name === newContact.name ||
+          contact.number === newContact.number
       ).id;
       dispatch(updateContact(newContact));
       alert('You just changed this contact');

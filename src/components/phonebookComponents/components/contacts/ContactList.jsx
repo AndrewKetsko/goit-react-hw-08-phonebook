@@ -16,15 +16,20 @@ export default function ContactList() {
 
   return (
     <>
-      {isLoading && <p>Is Loading</p>}
+      {/* {isLoading && <p>Is Loading</p>} */}
       <List>
         {contacts
           .filter(contact => {
             return contact.name.toLowerCase().includes(filter);
           })
-          .map(contact => {
+          .map((contact, index) => {
             return (
-              <Element key={contact.id}>
+              <Element
+                key={contact.id}
+                style={{
+                  backgroundColor: index % 2 === 0 ? 'lightgrey' : 'white',
+                }}
+              >
                 <ContactEl contact={contact} />
               </Element>
             );

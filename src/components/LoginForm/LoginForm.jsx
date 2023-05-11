@@ -1,6 +1,6 @@
 import { loginUser } from "components/Redux/query";
 import { useDispatch } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import { Form } from "./Login.styled";
 
 export const LoginForm = () => {
@@ -17,6 +17,7 @@ export const LoginForm = () => {
     
   return (
     <Form autoComplete="off" onSubmit={loginForm}>
+      <Typography>LOGIN</Typography>
       <TextField
         id="standard-basic-1"
         name="email"

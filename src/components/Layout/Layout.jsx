@@ -60,10 +60,10 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      
+{/*       
       <footer>
         <div>FOOTER</div>
-      </footer>
+      </footer> */}
     </>
   );
 };
