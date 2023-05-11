@@ -6,7 +6,7 @@ import { getContacts } from '../../../Redux/query';
 
 export default function ContactList() {
   const contacts = useSelector(state => state.contacts.items);
-  const isLoading = useSelector(state => state.contacts.isLoading);
+  // const isLoading = useSelector(state => state.contacts.isLoading);
   const filter = useSelector(state => state.filter.filter);
   const dispatch = useDispatch();
 
